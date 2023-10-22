@@ -1,1 +1,7 @@
-
+# Confirm installation
+aws --version
+aws configure
+  # AWS access key id
+  # AWS secret access key
+  # Default region name
+  # Default output format {json}
