@@ -1,0 +1,11 @@
+# Creating an EC2 key-pair
+aws ec2 create key-pair --key-name MyEC2Key --query 'KeyMaterial' --output text > myec2key.pem
+
+# Verify key-pair
+aws ecs describe-key-pair
+
+# Delete key-pair
+aws ec2 delete-key-pair MyEC2Key
+
+# Saving a Key to a file
+aws ec2 describe-key-pair --key-name MyEC2Key --query 'KeyMaterial' --output text > myec2key.pem
