@@ -1,1 +1,6 @@
+# Launching an EC2 instance
 
+aws ec2 run-instances --image-id ami-03eb6185d756497f8 --instance-type t2.micro --key-name MyEC2Key
+aws ec2 describe-instances
+aws ec2 create-tags --resource ami-03eb6185d756497f8 --tags Key=Name, Value=UbuntuVMSSD
+aws ec2 stop-instances --instance-ids i-0704e998f96d4a6c6
