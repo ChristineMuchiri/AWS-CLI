@@ -1,0 +1,6 @@
+# Converting .mov file to mp4 file
+
+input_file="$1"
+output_file="output.mp4"
+
+ffmpeg -f mov -i "$input_file" -c:v libx264 -crf 23 -c:a aac -strict experimental "$output_file"
