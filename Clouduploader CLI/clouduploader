@@ -1,0 +1,43 @@
+#!/bin/bash
+
+# check if AWS cLI is installed
+
+if ! command -v aws &> /dev/null
+then
+        echo "AWS CLI NOT INSTALLED!"
+        exit 1
+fi
+
+# check if file path is provided
+
+if [ -z "$1" ]
+then
+        echo "Provide file path"
+        exit 1
+fi
+
+# check if file exists
+
+file_path="$1"
+if [ ! -f $file_path ]
+then
+        echo "File does not exist"
+        exit 1
+fi
+
+# upload file to s3 bucket
+
+bucket_name="tinnie1"
+s3_key="$2"
+error_file="error.txt"
+
+aws s3api put-object --bucket "$bucket_name" --key "$s3_key" --body "$file_path" 2> "$error_file"
+
+if [ $? -eq 0 ]
+then
+        echo "File successfully uploaded to S3 bucket : $bucket_name"
+else
+        echo "File upload unsuccessful"
+        cat "$error_file"
+        exit 1
+fi
