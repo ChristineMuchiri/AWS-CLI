@@ -12,6 +12,9 @@ For installation and configuration of AWS CLI [Configure AWS CLI](https://github
    cd Clouduploader CLI
 2. Make the script executable
    chmod +x clouduploader
+3. Run the installation script
+   ./install_clouduploader
+The CloudUploader will be installed to a directory in your system's PATH, allowing you to run it from any location.
 
 ## Usage
 The tool allows you to upload a local file to an S# bucket.
