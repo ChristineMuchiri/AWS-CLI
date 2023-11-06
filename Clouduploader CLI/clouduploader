@@ -24,14 +24,22 @@ then
         echo "File does not exist"
         exit 1
 fi
-
+# Check if the required arguments are provided
+if [ $# -ne 3 ]
+then
+    echo "Usage: $0 <bucket> <source_file> <destination_key>"
+        exit 1
+fi
+# Assign command-line arguments to variables
+        bucket="$1"
+        source_file="$2"
+        destination_key="$3"
 # upload file to s3 bucket
 
-bucket_name="tinnie1"
-s3_key="$2"
 error_file="error.txt"
+ aws s3api put-object --bucket "$bucket" --key "$destination_key" --body "$source_file" 2> "$error_file"
 
-aws s3api put-object --bucket "$bucket_name" --key "$s3_key" --body "$file_path" 2> "$error_file"
+# check exit status of the command
 
 if [ $? -eq 0 ]
 then
