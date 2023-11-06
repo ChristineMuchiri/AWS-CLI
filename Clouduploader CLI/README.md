@@ -4,7 +4,7 @@ A bash-based CLI tool that allows users to quickly upload files to a specified c
 
 ## Prerequisites
 Have AWS CLI installed and configured with the necessary credentials.
-For installation and configuration of AWS CLI [Configure AWS CLI(https://github.com/ChristineMuchiri/AWS-CLI/blob/main/ConfigureAWSCLI)]
+For installation and configuration of AWS CLI [Configure AWS CLI](https://github.com/ChristineMuchiri/AWS-CLI/blob/main/ConfigureAWSCLI)
 
 ## Installation
 1. Clone this repo to your local machine.
@@ -22,7 +22,7 @@ The tool allows you to upload a local file to an S# bucket.
 
 # Common Issues and Troubleshooting
 ## 1. AWS CLI not installed
-Make sure you have the AWS CLI installed and configured. You can install it using the official [AWS CLI installation guide(https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
+Make sure you have the AWS CLI installed and configured. You can install it using the official [AWS CLI installation guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html)
 
 ## Provide a file path
 If you see the error "Provide file path" when running the script, ensure you provide the local file path as an argument when running the script
